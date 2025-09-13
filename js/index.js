@@ -51,8 +51,10 @@ loginForm.onsubmit = (e) => {
             loginBtn.innerText = 'Please Wait...';
             setTimeout(() => {
                 loginBtn.innerText = 'Login';
-                window.location = './profile/profile.html'
-            }, 2000);
+                window.location = './profile/profile.html';
+                checkEmail.password = null;
+                sessionStorage.setItem('__am__',JSON.stringify(checkEmail));
+            }, 2000)
           }
           else{
             swal('Warning', 'Wrong Password !', 'warning')
